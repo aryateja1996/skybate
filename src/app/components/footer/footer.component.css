@@ -1,0 +1,17 @@
+.w100{
+    width: 50vw;
+}
+.t{
+    display: flex;
+  justify-content: end;
+  margin-right: 100px;
+
+}
+.pts{
+    display: flex;
+
+}
+.skybate{
+    display: flex;
+    margin-left: 100px;
+}

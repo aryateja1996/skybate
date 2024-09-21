@@ -1,0 +1,180 @@
+.solutions {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+.solutions h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #030303;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.solutions-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+.solution {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideInUp 1s ease-in-out forwards;
+    flex: 1 1 calc(33.333% - 40px); /* Adjust to fit three per row */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.solution:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+.solution:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.solution:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.solution:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.solution:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.solution h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+.solution p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #1a1919;
+}
+
+.clients {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+.clients h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.clients-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap; /* Ensure images are in a single line */
+    gap: 30px;
+    margin-top: 30px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.client {
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideInUp 1s ease-in-out forwards;
+}
+.client:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.client:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.client:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.client:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.client img {
+    width: 150px; /* Set a fixed width for all images */
+    height: 150px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the image covers the area and maintains aspect ratio */
+    border-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+.btn {
+    animation: bounceIn 1s ease-in-out;
+}
+
+body {
+    padding-top: 80px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes slideInUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    70% {
+        transform: translateY(-5px);
+    }
+    90% {
+        transform: translateY(-2px);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .solution {
+        flex: 1 1 calc(50% - 40px); /* Adjust to fit two per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .solution {
+        flex: 1 1 calc(100% - 40px); /* Adjust to fit one per row */
+    }
+    .solution h3 {
+        font-size: 1.5rem;
+    }
+    .solution p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .solutions-container {
+        gap: 20px;
+    }
+    .solution {
+        padding: 15px;
+    }
+    .solution h3 {
+        font-size: 1.2rem;
+    }
+    .solution p {
+        font-size: 0.9rem;
+    }
+}
