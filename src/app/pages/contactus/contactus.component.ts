@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConstantsService } from '../../utils/constants.service';
 
 @Component({
   selector: 'app-contactus',
@@ -9,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class ContactusComponent {
 email = 'info@skybate.in';
+consts:ConstantsService=new ConstantsService
 }

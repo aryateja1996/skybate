@@ -1,0 +1,82 @@
+
+    <div class="form-container">
+        <h2>Course Application Form</h2>
+        <form id="applicationForm" action="/submit" method="post">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+	    <div class="form-group">
+                <label for="Gender">Gender:</label>
+                <select id="Gender" name="Gender" required>
+                    <option value="">Select your Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+	    <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <select id="occupation" name="occupation" required>
+                    <option value="">Select your occupation</option>
+                    <option value="student">Student</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="professional">Professional</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="district">District:</label>
+                <input type="text" id="district" name="district" placeholder="Enter your district" required>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" placeholder="Enter your state" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" placeholder="Enter your country" required>
+            </div>
+
+            <div class="form-group">
+                <label for="graduation">Highest Graduation Level:</label>
+                <select id="graduation" name="graduation" required>
+                    <option value="">Select your highest graduation level</option>
+                    <option value="highschool">High School</option>
+                    <option value="bachelors">Bachelor's Degree</option>
+                    <option value="masters">Master's Degree</option>
+                    <option value="phd">PhD</option>
+		    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="course">Course Interested In:</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Django">Django</option>
+                    <option value="Flask">Flask</option>
+		    <option value="Python Programming">Python Programming</option>
+                    <option value="Flutter">Flutter</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+		    <option value="Full Stack">Full Stack</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Why do you want to join this course?</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>

@@ -7,19 +7,24 @@
         </div>
         <div class="contact-info">
             <p>HITEC City, Hyderabad, India</p>
-            <p>Email: {{emailid}}</p>
-            <p>Phone: +91 9429693038</p>
+            <p>Email: {{consts.infoMaiil}}</p>
+            <p>Phone: {{consts.phone}}</p>
         </div>
        
     </div>
     <div class="pts">
       <div class="w100 skybate">
-        <p>&copy; 2024 Skybate Technologies. All Rights Reserved.</p>
+        <p (click)="makePayment()">&copy; 2024 Skybate Technologies private limited. All Rights Reserved.</p>
       </div>
        <div class="w100 t">
-        <p routerLink="/privacy-policy">Privacy Policy&nbsp; &nbsp; </p> 
-        <p routerLink="/terms-conditions">Terms & Conditions&nbsp; &nbsp;</p>
-        <p routerLink="/security-policy">Security Policy</p>
+        <p class="pointer" routerLink="/privacy-policy">Privacy Policy&nbsp; &nbsp; </p> 
+        <p class="pointer" routerLink="/terms-conditions">Terms & Conditions&nbsp; &nbsp;</p>
+        <p class="pointer" routerLink="/security-policy">Security Policy&nbsp; &nbsp;</p>
+        <p class="pointer" routerLink="/pricing-refund-policy">Pricing & Refund Policy</p>
        </div>
     </div>
-</footer>   
+    <div style="text-align: center;">
+        The pricing of the products and services can range from INR 499 to INR 29999 excluding gst 
+
+    </div>
+</footer>

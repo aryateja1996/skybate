@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+.pointer {cursor: pointer;}
+
 .employee img {
     width: 100px;
     height: 100px;
