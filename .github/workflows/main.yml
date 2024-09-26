@@ -26,7 +26,7 @@ jobs:
       run: npm run build  # Run the build script
 
     - name: Upload build files via FTP
-      uses: sebastianpopp/ftp-action@v2  # Use an FTP action to upload files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5  # Use an FTP action to upload files
       with:
         host: ${{ secrets.FTP_HOST }}       # FTP Host (e.g., ftp.example.com)
         username: ${{ secrets.FTP_USERNAME }}  # FTP Username
