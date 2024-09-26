@@ -4,7 +4,6 @@ deployment:
       - export DEPLOYPATH=/home2/skybatein/public_html/
       - source /home2/skybatein/nodevenv/repositories/skybate/16/bin/activate && cd /home2/skybatein/repositories/skybate
       - npm install
-      - npm build
-      - export DISTPATH = /home2/skybatein/repositories/skybate/dist/portfolio/browser/
-      - bin/cp $DISTPATH $DEPLOYPATH
-      
+      - npm run build
+      - export DISTPATH=/home2/skybatein/repositories/skybate/dist/portfolio/browser/
+      - cp -r $DISTPATH $DEPLOYPATH
