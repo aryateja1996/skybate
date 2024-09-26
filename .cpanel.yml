@@ -1,9 +1,11 @@
 ---
 deployment:
-    tasks:
+  tasks:
+    pre_deploy:
       - export DEPLOYPATH=/home2/skybatein/public_html/
-      - source /home2/skybatein/nodevenv/repositories/skybate/16/bin/activate && cd /home2/skybatein/repositories/skybate
-      - npm install
-      - npm run build
       - export DISTPATH=/home2/skybatein/repositories/skybate/dist/portfolio/browser/
-      - cp -r $DISTPATH $DEPLOYPATH
+    deploy:
+      - /bin/bash -c "source /home2/skybatein/nodevenv/repositories/skybate/16/bin/activate && cd /home2/skybatein/repositories/skybate && npm install && npm run build"
+      - /bin/cp -R $DISTPATH* $DEPLOYPATH
+    post_deploy:
+      - echo "Deployment to $DEPLOYPATH completed."
