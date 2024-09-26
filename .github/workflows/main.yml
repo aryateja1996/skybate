@@ -1,0 +1,38 @@
+name: Deploy to cPanel using FTP
+
+on:
+  push:
+    branches:
+      - main  # Triggers on push to the main branch, change as needed
+
+jobs:
+  deploy:
+    name: Deploy build files via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Check out the repository code
+
+    - name: Set up Node.js environment
+      uses: actions/setup-node@v3  # Set up Node.js environment for running npm
+      with:
+        node-version: '18.x'  # Specify the version of Node.js (adjust as needed)
+
+    - name: Install dependencies
+      run: npm install  # Install necessary dependencies
+
+    - name: Build the project
+      run: npm run build  # Run the build script
+
+    - name: Upload build files via FTP
+      uses: sebastianpopp/ftp-action@v2  # Use an FTP action to upload files
+      with:
+        host: ${{ secrets.FTP_HOST }}       # FTP Host (e.g., ftp.example.com)
+        username: ${{ secrets.FTP_USERNAME }}  # FTP Username
+        password: ${{ secrets.FTP_PASSWORD }}  # FTP Password
+        local-dir: ./dist                  # Local directory containing build files (adjust based on your project structure)
+        remote-dir: /public_html         # Remote directory on the FTP server
+
+    - name: Success message
+      run: echo "Build files have been successfully deployed via FTP."
