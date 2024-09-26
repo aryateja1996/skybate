@@ -32,7 +32,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}  # FTP Username
         password: ${{ secrets.FTP_PASSWORD }}  # FTP Password
         local-dir: ./dist/                  # Local directory containing build files (adjust based on your project structure)
-        server-dir: /public_html         # Remote directory on the FTP server
+        server-dir: /public_html/         # Remote directory on the FTP server
 
     - name: Success message
       run: echo "Build files have been successfully deployed via FTP."
