@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../../services/api.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apply-webinar',
@@ -10,10 +11,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './apply-webinar.component.css'
 })
 export class ApplyWebinarComponent {
-  constructor(private apiService: ApiService){
+  constructor(private apiService: ApiService,private router : Router){
 
-  }
+    console.log(" The Url : ", this.router.url);
+    
+    }
   participant = {
+    userId : '',
+    amount : 0,
     name: '',
     email: '',
     phone: '',
@@ -21,16 +26,23 @@ export class ApplyWebinarComponent {
     session: 'morning',
     interest: '',
     requirements: '',
-    agreeToTerms: false
   };
-
+/**
+ * {
+  "userId":"HELLO123",
+  "amount":1,
+  "phoneNumber":9963028580
+}
+ */
   onSubmit() {
-    if (this.participant.agreeToTerms) {
-      // Logic for form submission can go here (e.g., HTTP request to backend)
-      console.log('Form Submitted:', this.participant);
-      alert('Registration successful!');
-    } else {
-      alert('Please agree to the terms and conditions.');
-    }
+    this.participant.userId = `FlutterUser${this.participant.session}`;
+    this.participant.amount = 100;
+    this.apiService.paymentForFlutter(this.participant).subscribe((res)=>{
+      console.log(res);
+      const responce  = res as any;
+      window.location.href = responce['redirectUrl']
+      
+    })
+
   }
 }
