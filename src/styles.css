@@ -55,7 +55,6 @@ nav ul li {
             vertical-align: middle; */
         }
         .logo img{
-            position: fixed;
             left: 40px;
             height: 50px;
             width: 50px;
@@ -350,7 +349,7 @@ nav ul li {
         }
         .logo h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 1em;
         }
         nav ul {
             list-style: none;

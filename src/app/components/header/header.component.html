@@ -2,15 +2,21 @@
     <div class="container">
         <div class="logo">
             <img src="logo.png" alt="Logo">
-            <h1>SKYBATE TECHNOLOGIES</h1>
+            <h1>SKYBATE</h1>
         </div>
         <nav>
-            <ul>
+            <ul [class.show]="isMenuOpen" class="nav-links">
                 <li><a routerLink="/home" href="">Home</a></li>
                 <li><a routerLink="/about-us" href="">About Us</a></li>
                 <li><a routerLink="/our-services" href="">Services</a></li>
                 <li><a routerLink="/contact" href="">Contact Us</a></li>
             </ul>
+            <div class="hamburger" (click)="toggleMenu()">
+                <div class="line"></div>
+                <div class="line-middle"></div>
+                <div class="line"></div>
+            </div>
         </nav>
+
     </div>
 </header>

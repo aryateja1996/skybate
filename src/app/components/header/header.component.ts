@@ -9,5 +9,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  isMenuOpen: boolean = false;
 
+  // Function to toggle the hamburger menu
+  toggleMenu(): void {
+    console.log(this.isMenuOpen);
+    
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

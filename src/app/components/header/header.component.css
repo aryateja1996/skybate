@@ -13,13 +13,65 @@
     margin-right: 10px; /* Adjust spacing between logo and text */
 }
 
-nav ul {
-    list-style-type: none;
+.nav-links {
+    list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
 }
 
-nav ul li {
-    margin-left: 50px; /* Adjust spacing between nav items */
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.nav-links li a:hover {
+    color: #f4a261;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: flex-end;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+.hamburger .line-middle{
+    width: 12.5px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    float: right;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links.show {
+        display: flex;
+      }
+    .nav-links li {
+        margin: 1rem 0;
+    }
+    .hamburger{
+        display: flex;
+        margin-bottom: 1em;
+    }
 }
