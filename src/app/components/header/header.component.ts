@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { UIService } from '../../services/ui.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, AsyncPipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  isMenuOpen: boolean = false;
-
-  // Function to toggle the hamburger menu
-  toggleMenu(): void {
-    console.log(this.isMenuOpen);
-    
-    this.isMenuOpen = !this.isMenuOpen;
+  constructor(public uiService: UIService) {
+  }
+  toggleMenu() {
+    this.uiService.setState({sideMenu: !this.uiService._uiState.sideMenu});
   }
 }

@@ -4,8 +4,8 @@
             <img src="logo.png" alt="Logo">
             <h1>SKYBATE</h1>
         </div>
-        <nav>
-            <ul [class.show]="isMenuOpen" class="nav-links">
+        <nav [class.open]="(uiService.uiState$ | async)?.sideMenu">
+            <ul>
                 <li><a routerLink="/home" href="">Home</a></li>
                 <li><a routerLink="/about-us" href="">About Us</a></li>
                 <li><a routerLink="/our-services" href="">Services</a></li>
@@ -17,6 +17,6 @@
                 <div class="line"></div>
             </div>
         </nav>
-
+        <span class="material-symbols-outlined menu-icon" (click)="toggleMenu()">menu</span>
     </div>
 </header>

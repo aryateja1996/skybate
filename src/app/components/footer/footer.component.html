@@ -1,30 +1,57 @@
 <footer>
-    <div class="container">
-        <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">LinkedIn</a>
-        </div>
-        <div class="contact-info">
-            <p>HITEC City, Hyderabad, India</p>
-            <p>Email: {{consts.infoMaiil}}</p>
-            <p>Phone: {{consts.phone}}</p>
-        </div>
-       
+  <div class="pricing-info" style="text-align: center">
+    The pricing of the products and services can range from INR 499 to INR 29999
+    excluding GST
+  </div>
+  <div class="container">
+    <div class="social-media">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
     </div>
-    <div class="pts">
-      <div class="w100 skybate">
-        <p>&copy; 2024 Skybate Technologies private limited. All Rights Reserved.</p>
+  </div>
+  <div
+    class="container"
+    style="display: flex; justify-content: space-between; align-items: center;flex-wrap: wrap-reverse;"
+  >
+    <div class="contact-info">
+      <div>
+        <span class="material-symbols-outlined"> location_on </span>
+        <p>HITEC City, Hyderabad, India</p>
       </div>
-       <div class="w100 t">
-        <p class="pointer" routerLink="/privacy-policy">Privacy Policy&nbsp; &nbsp; </p> 
-        <p class="pointer" routerLink="/terms-conditions">Terms & Conditions&nbsp; &nbsp;</p>
-        <p class="pointer" routerLink="/security-policy">Security Policy&nbsp; &nbsp;</p>
-        <p class="pointer" routerLink="/pricing-refund-policy">Pricing & Refund Policy</p>
-       </div>
+      <div>
+        <span class="material-symbols-outlined"> email </span>
+        <p>{{ consts.infoMaiil }}</p>
+      </div>
+      <div>
+        <span class="material-symbols-outlined"> phone </span>
+        <p>{{ consts.phone }}</p>
+      </div>
     </div>
-    <div style="text-align: center; display:none;">
-        The pricing of the products and services can range from INR 499 to INR 29999 excluding gst 
-
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+      <h1>SKYBATE</h1>
     </div>
+  </div>
+  <div class="pts poppins-light">
+    <div class="w100 skybate">
+      <p>
+        &copy; 2024 Skybate Technologies private limited. All Rights Reserved.
+      </p>
+    </div>
+    <div class="w100 t">
+      <p class="pointer" routerLink="/privacy-policy">
+        Privacy Policy&nbsp; &nbsp;
+      </p>
+      <p class="pointer" routerLink="/terms-conditions">
+        Terms & Conditions&nbsp; &nbsp;
+      </p>
+      <p class="pointer" routerLink="/security-policy">
+        Security Policy&nbsp; &nbsp;
+      </p>
+      <p class="pointer" routerLink="/pricing-refund-policy">
+        Pricing & Refund Policy
+      </p>
+    </div>
+  </div>
 </footer>

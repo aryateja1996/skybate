@@ -1,31 +1,56 @@
-.w100{
+.w100 {
     width: 50vw;
 }
-.t{
+
+.t {
     display: flex;
-  justify-content: end;
-  margin-right: 100px;
+    justify-content: end;
+    margin-right: 100px;
 
 }
-.pts{
-    display: flex;
 
+.pts {
+    display: flex;
+    font-size: 13px;
 }
-.skybate{
+
+.skybate {
     display: flex;
     justify-content: center;
 }
+
+.pricing-info {
+    position: relative;
+    width: 100%;
+    padding: 18px 0;
+    background-color: #444;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
-    .t{
-        margin-right: 10px;
-        font-size: xx-small;
-        width: 100vw !important;
+    .t {
+        display: block;
     }
-    .skybate{
-        align-self: center;
+
+    .pts {
+        flex-wrap: wrap-reverse;
     }
-    .pts{
-        flex-direction: column;
-        align-items: flex-end;
+
+    .pts > div {
+        margin: 8px;
     }
+
+    .w100 {
+        width: 100%;
+    }
+
+    .container {
+        width: unset;
+        margin: 0 8px;
+    }
+
+    .logo {
+        display: none;
+    }
+
 }

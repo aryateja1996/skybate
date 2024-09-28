@@ -1,0 +1,18 @@
+#home {
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+#home img {
+    position: absolute;
+    display: block !important;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(4px);
+}
