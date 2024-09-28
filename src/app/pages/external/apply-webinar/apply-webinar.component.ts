@@ -36,7 +36,7 @@ export class ApplyWebinarComponent {
  */
   onSubmit() {
     this.participant.userId = `FlutterUser${this.participant.session}`;
-    this.participant.amount = 1;
+    this.participant.amount = 1499;
     this.apiService.paymentForFlutter(this.participant).subscribe((res)=>{
       console.log(res);
       const responce  = res as any;
