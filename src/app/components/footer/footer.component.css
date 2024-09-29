@@ -14,9 +14,15 @@
     font-size: 13px;
 }
 
-.skybate {
+.skybate {    
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+.pointer{
+    margin: 0.5em;
 }
 
 .pricing-info {
@@ -51,6 +57,12 @@
 
     .logo {
         display: none;
+    }
+    .skybate{
+        align-items: center;
+    }
+    .pointer{
+        margin: 0;
     }
 
 }

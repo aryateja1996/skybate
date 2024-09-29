@@ -1,1 +1,17 @@
-<p>fail-page works!</p>
+<div class="payment-failure-container">
+    <h1>Payment Failed</h1>
+    <p>We're sorry, but your payment could not be processed.</p>
+  
+    <div >
+      <p>Error: {{ 'transaction Failure' }}</p>
+    </div>
+  
+    <div>
+      <p>Transaction ID: {{ "transactionId" }}</p>
+    </div>
+  
+    <div class="actions">
+      <button routerLink="/contact" class="support-btn">Contact Support</button>
+    </div>
+  </div>
+  
