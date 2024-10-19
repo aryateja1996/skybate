@@ -87,7 +87,7 @@
     <div class="agreeBtn" (click)="agreeToTermsHandle()">
         Agree To Terms and Register
     </div>
-    <div style="font-size: small;">
+    <div style="font-size: small; text-align: center;">
         By proceeding you are accepting the terms and conditions 
     </div>
     </div>
@@ -95,7 +95,7 @@
    @if (showForm) {
     <div class="flex-right wm50">
         <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-            <h2 class="reg-heading">Hackathon Registration Form</h2>
+            <h2 class="reg-heading">SkyHack 2024 Registration Form</h2>
           
             <div>
               <label for="fullName">Full Name:</label>
@@ -158,16 +158,59 @@
               <input id="yearOfStudy" formControlName="yearOfStudy" type="number" />
             </div>
           
-            <div>
+            <!-- <div>
               <label for="major">Major/Discipline:</label>
               <input id="major" formControlName="major" type="text" />
-            </div>
-          
+            </div> -->
             <div>
-              <label for="teamName">Team Name (optional):</label>
+              <label for="abstract">Abstract (optional):</label>
+              <textarea id="abstract" formControlName="abstract"></textarea>
+            </div>
+            <div>
+              <label for="teamName">Team Name:</label>
               <input id="teamName" formControlName="teamName" type="text" />
             </div>
-          
+          <div>
+            <label for="teamSize">
+             Team Size:
+            </label>
+            <select formControlName="teamSize" id="teamSize" (change)="selctTeamSize($event)">
+                <option value="" disabled>Select</option>
+                <option value="1"  >1 member</option>
+                <option value="2" >2 members</option>
+                <option value="3" >3 members</option>
+                <option value="4" >4 members</option>
+            </select>
+          </div>
+         @if (teamSize > 1) {
+          <div formArrayName="teamMembers">
+            <div *ngFor="let member of teamMembers.controls; let i = index" [formGroupName]="i">
+              <h3>Team Member {{ i + 1 }} </h3>
+              <label for="memberName{{ i }}">Name</label>
+              <input type="text" id="memberName{{ i }}" formControlName="memberName" placeholder="Enter name" />
+
+              <label for="memberEmail{{ i }}"> Email</label>
+              <input type="text" id="memberEmail{{ i }}" formControlName="memberEmail" type="email" placeholder="Enter member emailid" />
+
+
+              <label for="memberMobile{{ i }}">Mobile</label>
+              <input type="text" id="memberMobile{{ i }}" formControlName="memberMobile" type="tel" placeholder="Enter mobile number" />
+
+
+              <label for="memberYearOfStudy{{ i }}">Year Of Study</label>
+              <input type="text" id="memberYearOfStudy{{ i }}" formControlName="memberYearOfStudy" placeholder="Enter year of study" />
+
+
+              <label for="memberName{{ i }}">Gender:</label>
+              <select  id="memberGender{{ i }}" formControlName="memberGender">
+              <option value="" disabled>Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            </div>
+          </div>
+         }
             <div>
               <label for="areaOfInterest">Area of Interest:</label>
               <select id="areaOfInterest" formControlName="areaOfInterest">
@@ -207,7 +250,7 @@
             <div>
               <label for="foodPreferences">Food Preferences (optional):</label>
               <input id="foodPreferences" formControlName="foodPreferences" type="text" />
-            </div>
+            </div>©
            -->
             <div>
               <label for="emergencyContact">Emergency Contact Number:</label>
@@ -216,7 +259,7 @@
           
             <div>
               <label for="termsAgreement">
-                <input id="termsAgreement" formControlName="termsAgreement" type="checkbox" [disabled]="true"/> I agree to the Terms and Conditions
+                <input id="termsAgreement" formControlName="termsAgreement" type="checkbox"/> I agree to the Terms and Conditions
               </label>
             </div>
           

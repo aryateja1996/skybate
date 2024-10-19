@@ -1,5 +1,4 @@
 form {
-    width: 100%;
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -20,12 +19,14 @@ label {
 input,
 textarea,
 select {
-    width: 98%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
+.flex-right div{
+    width: 80vw;
+}
 
 button {
     padding: 10px 20px;
@@ -126,7 +127,7 @@ p {
 }
 
 .disclaimer p {
-    font-size: 1.2rem;
+    font-size: 13px;
     color: #ff5050;
 }
 
@@ -136,4 +137,8 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+@media screen and (max-width: 768px){
+
 }
