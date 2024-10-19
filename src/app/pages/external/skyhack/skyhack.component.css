@@ -1,0 +1,116 @@
+form {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea,
+  select {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  
+  .reg-heading {
+    text-align: center;
+  }
+  
+
+/* Terms Stylings */
+
+.w50{
+    max-width: 50vw;
+}
+.wm50{
+    min-width :50vw;
+}
+/* General Container Styling */
+.terms-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    /* background-color: #1b1b1b; */
+    color: #040404;
+    font-family: 'Roboto', sans-serif;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+    border-radius: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    /* color: #a1ffb0; */
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+  }
+  
+  h2 {
+    /* color: #54e346; */
+    font-size: 1.8rem;
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    /* color: #e0e0e0; */
+    margin-bottom: 10px;
+  }
+  
+  .terms-section {
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+  }
+  
+  /* Disclaimer Styling */
+  .disclaimer {
+    background-color: #303030;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .disclaimer p {
+    font-size: 1.2rem;
+    color: #ff5050;
+  }
+  
+
+
+  .flex{
+    display: flex;
+    flex-direction: row
+    ;
+    justify-content: space-around;
+  }

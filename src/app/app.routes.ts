@@ -10,6 +10,7 @@ import { PricingRefundPolicyComponent } from './pages/pricing-refund-policy/pric
 import { SucessPageComponent } from './pages/payment/sucess-page/sucess-page.component';
 import { FailPageComponent } from './pages/payment/fail-page/fail-page.component';
 import { ApplyWebinarComponent } from './pages/external/apply-webinar/apply-webinar.component';
+import { SkyhackComponent } from './pages/external/skyhack/skyhack.component';
 
 
 export const routes: Routes = [
@@ -24,5 +25,6 @@ export const routes: Routes = [
     {path:'pricing-refund-policy',component:PricingRefundPolicyComponent},
     {path:'sucess-payment',component:SucessPageComponent},
     {path:'fail-payment',component:FailPageComponent},
-    {path:'apply-webinar',component:ApplyWebinarComponent}
+    {path:'apply-webinar',component:ApplyWebinarComponent},
+    {path:'skyhack',component:SkyhackComponent}
 ];

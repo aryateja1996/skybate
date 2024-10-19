@@ -1,0 +1,222 @@
+<div class="flex">
+    <div class="flex-left w50">
+        <div class="terms-container">
+            <!-- <h1>SkyHack 2024 Hackathon - Terms and Conditions</h1> -->
+          
+            <div class="terms-section">
+              <h2>1. Eligibility</h2>
+              <p><b>Participants:</b> The hackathon is open to individuals who are 18 years or older, currently enrolled in a recognized educational institution, or professionals in the tech industry.</p>
+              <p><b>Team Composition:</b> Teams can consist of up to 4 members. Individual participation is also allowed.</p>
+              <p><b>Geographic Limitations:</b> SkyHack 2024 is open globally, but submissions must be in English.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>2. Registration</h2>
+              <p><b>Registration Process:</b> Participants must complete the registration before <b>30 October 2024</b>.</p>
+              <p><b>Registration Fee:</b> A non-refundable fee of <b>INR 500</b> per team is required. Student discounts apply.</p>
+              <p><b>Deadline:</b> Registrations must be completed by <b>30 October 2024</b>.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>3. Code of Conduct</h2>
+              <p><b>Behavior:</b> Participants are expected to behave professionally and respectfully. Harassment or discrimination will not be tolerated.</p>
+              <p><b>Collaboration:</b> Collaboration is encouraged, but all work must be original.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>4. Project Guidelines</h2>
+              <p><b>Original Work:</b> All projects must be created during the hackathon, starting on <b>09 November 2024</b>.</p>
+              <p><b>Submission Requirements:</b> Projects must be submitted by <b>11:59 PM on 10 November 2024</b> and include a description, code repository, and demo video.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>5. Intellectual Property Rights</h2>
+              <p><b>Ownership:</b> Participants retain full ownership of their projects, but SkyHack 2024 organizers may showcase projects for promotional purposes.</p>
+              <p><b>Third-Party Material:</b> Ensure that you have rights to use any third-party material in your project.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>6. Judging Criteria</h2>
+              <p>Projects will be evaluated based on: <br>1. Innovation <br>2. Technical Complexity <br>3. Impact <br>4. Presentation</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>7. Prizes and Awards</h2>
+              <p><b>First Prize:</b> INR 10,000<br><b>Second Prize:</b> INR 7,000<br><b>Third Prize:</b> INR 5,000</p>
+              <p>Prizes will be distributed within 30 days after the event. Taxes on prizes are the responsibility of the winner.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>8. Disqualification</h2>
+              <p>Participants may be disqualified for plagiarism, cheating, or violating the code of conduct.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>9. Liability</h2>
+              <p>The organizers are not liable for any damages, data loss, or personal injuries that may occur during the event.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>10. Confidentiality</h2>
+              <p>Participants should not share confidential information during the event. The organizers will not be responsible for any loss of proprietary rights as a result.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>11. Force Majeure</h2>
+              <p>The organizers reserve the right to cancel or modify the event due to unforeseen circumstances such as natural disasters or pandemics.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>12. Photo and Video Release</h2>
+              <p>By participating, you agree to be photographed and/or filmed during the event, and grant organizers permission to use this media for promotional purposes.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>13. Privacy Policy</h2>
+              <p>Your personal data will be used for organizing and managing the event and will not be shared with third parties without your consent.</p>
+            </div>
+          
+            <div class="terms-section">
+              <h2>14. Governing Law</h2>
+              <p>These terms are governed by the laws of India, and disputes will be subject to the jurisdiction of courts in Bangalore, India.</p>
+            </div>
+          
+        
+          </div>
+          
+    </div>
+    <div class="flex-right wm50">
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <h2 class="reg-heading">Hackathon Registration Form</h2>
+          
+            <div>
+              <label for="fullName">Full Name:</label>
+              <input id="fullName" formControlName="fullName" type="text" />
+              @if(registrationForm.get('fullName')?.invalid && registrationForm.get('fullName')?.touched){
+              <div >
+                Name is required and must be at least 3 characters.
+              </div>}
+            </div>
+          
+            <div>
+              <label for="email">Email:</label>
+              <input id="email" formControlName="email" type="email" />
+              @if(registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched){<div>
+                Valid email is required.
+              </div>}
+            </div>
+          
+            <div>
+              <label for="mobile">Mobile Number:</label>
+              <input id="mobile" formControlName="mobile" type="tel" />
+              @if(registrationForm.get('mobile')?.invalid && registrationForm.get('mobile')?.touched){<div>
+                Enter a valid 10-digit mobile number.
+              </div>}
+            </div>
+          
+            <div>
+              <label for="gender">Gender:</label>
+              <select id="gender" formControlName="gender">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          
+            <div>
+              <label for="dateOfBirth">Date of Birth:</label>
+              <input id="dateOfBirth" formControlName="dateOfBirth" type="date" />
+            </div>
+          
+            <div>
+              <label for="institutionName">Institution Name:</label>
+              <input id="institutionName" formControlName="institutionName" type="text" />
+            </div>
+          
+            <div>
+              <label for="academicLevel">Academic Level:</label>
+              <select id="academicLevel" formControlName="academicLevel">
+                <option value="">Select</option>
+                <option value="btech">B.Tech</option>
+                <option value="mtech">M.Tech</option>
+                <option value="phd">PhD</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          
+            <div>
+              <label for="yearOfStudy">Year of Study:</label>
+              <input id="yearOfStudy" formControlName="yearOfStudy" type="number" />
+            </div>
+          
+            <div>
+              <label for="major">Major/Discipline:</label>
+              <input id="major" formControlName="major" type="text" />
+            </div>
+          
+            <div>
+              <label for="teamName">Team Name (optional):</label>
+              <input id="teamName" formControlName="teamName" type="text" />
+            </div>
+          
+            <div>
+              <label for="areaOfInterest">Area of Interest:</label>
+              <select id="areaOfInterest" formControlName="areaOfInterest">
+                <option value="">Select</option>
+                <option value="smart-farming">Smart Farming</option>
+                <option value="smart-education">Smart Education Innovation</option>
+                <option value="smart-industrial">Smart Industrial</option>
+                <option value="own-innovation">Own Innovation</option>
+              </select>
+            </div>
+          
+            <div>
+              <label for="skills">Skills (optional):</label>
+              <textarea id="skills" formControlName="skills"></textarea>
+            </div>
+          
+            <div>
+              <label for="projectIdea">Project Idea (optional):</label>
+              <textarea id="projectIdea" formControlName="projectIdea"></textarea>
+            </div>
+          
+            <!-- <div>
+              <label for="feeProof">Upload Registration Fee Document:</label>
+              <input id="feeProof" formControlName="feeProof" type="file" />
+            </div>
+          
+            <div>
+              <label for="upiId">UPI ID:</label>
+              <input id="upiId" formControlName="upiId" type="text" />
+            </div>
+          
+            <div>
+              <label for="tShirtSize">T-shirt Size (optional):</label>
+              <input id="tShirtSize" formControlName="tShirtSize" type="text" />
+            </div>
+          
+            <div>
+              <label for="foodPreferences">Food Preferences (optional):</label>
+              <input id="foodPreferences" formControlName="foodPreferences" type="text" />
+            </div>
+           -->
+            <div>
+              <label for="emergencyContact">Emergency Contact Number:</label>
+              <input id="emergencyContact" formControlName="emergencyContact" type="tel" />
+            </div>
+          
+            <div>
+              <label for="termsAgreement">
+                <input id="termsAgreement" formControlName="termsAgreement" type="checkbox" /> I agree to the Terms and Conditions
+              </label>
+            </div>
+          
+            <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
+          </form>
+    </div>
+    
+</div>
+<div class="disclaimer">
+    <p><b>Disclaimer:</b> By participating in SkyHack 2024, you agree to these terms. The organizers reserve the right to modify these terms at any time.</p>
+  </div>
