@@ -92,19 +92,19 @@ button:disabled {
 h1 {
     text-align: center;
     /* color: #a1ffb0; */
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
     margin-bottom: 40px;
     letter-spacing: 2px;
 }
 
 h2 {
     /* color: #54e346; */
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     margin-top: 20px;
 }
 
 p {
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     line-height: 1.8;
     /* color: #e0e0e0; */
     margin-bottom: 10px;
