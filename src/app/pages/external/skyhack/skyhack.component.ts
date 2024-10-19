@@ -10,7 +10,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class SkyhackComponent {
   registrationForm: FormGroup;
-
+showForm:boolean = false;
+showTerms:boolean = true;
   constructor(private fb: FormBuilder) {
     this.registrationForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],
@@ -28,7 +29,7 @@ export class SkyhackComponent {
       skills: ['', Validators.required],
       projectIdea: ['', Validators.required],
       emergencyContact: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      termsAgreement: [false, Validators.requiredTrue],
+      termsAgreement: [{value: false, disabled: true}, Validators.requiredTrue,],
     });
   }
 
@@ -38,5 +39,16 @@ export class SkyhackComponent {
     } else {
       console.log('Form is invalid');
     }
+  }
+  agreeToTermsHandle(){
+    this.showForm = true;
+    this.showTerms = false;
+    this.registrationForm.patchValue({
+      termsAgreement: true
+    });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional: Adds smooth scrolling animation
+    });
   }
 }

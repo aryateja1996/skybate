@@ -1,5 +1,6 @@
-<div class="flex">
-    <div class="flex-left w50">
+<div class="w100">
+   @if(showTerms){
+    <div class="flex-left">
         <div class="terms-container">
             <!-- <h1>SkyHack 2024 Hackathon - Terms and Conditions</h1> -->
           
@@ -40,11 +41,11 @@
               <p>Projects will be evaluated based on: <br>1. Innovation <br>2. Technical Complexity <br>3. Impact <br>4. Presentation</p>
             </div>
           
-            <div class="terms-section">
+            <!-- <div class="terms-section">
               <h2>7. Prizes and Awards</h2>
               <p><b>First Prize:</b> INR 10,000<br><b>Second Prize:</b> INR 7,000<br><b>Third Prize:</b> INR 5,000</p>
               <p>Prizes will be distributed within 30 days after the event. Taxes on prizes are the responsibility of the winner.</p>
-            </div>
+            </div> -->
           
             <div class="terms-section">
               <h2>8. Disqualification</h2>
@@ -83,8 +84,15 @@
           
         
           </div>
-          
+    <div class="agreeBtn" (click)="agreeToTermsHandle()">
+        Agree To Terms and Register
     </div>
+    <div style="font-size: small;">
+        By proceeding you are accepting the terms and conditions 
+    </div>
+    </div>
+   }
+   @if (showForm) {
     <div class="flex-right wm50">
         <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
             <h2 class="reg-heading">Hackathon Registration Form</h2>
@@ -208,13 +216,14 @@
           
             <div>
               <label for="termsAgreement">
-                <input id="termsAgreement" formControlName="termsAgreement" type="checkbox" /> I agree to the Terms and Conditions
+                <input id="termsAgreement" formControlName="termsAgreement" type="checkbox" [disabled]="true"/> I agree to the Terms and Conditions
               </label>
             </div>
           
             <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
           </form>
     </div>
+   }
     
 </div>
 <div class="disclaimer">

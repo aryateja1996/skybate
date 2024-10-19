@@ -6,53 +6,78 @@ form {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-  }
-  
-  form div {
+}
+
+form div {
     margin-bottom: 15px;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     margin-bottom: 5px;
-  }
-  
-  input,
-  textarea,
-  select {
+}
+
+input,
+textarea,
+select {
     width: 98%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+}
 
-  
-  button {
+
+button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  button:disabled {
+}
+
+button:disabled {
     background-color: #ccc;
-  }
-  
-  .reg-heading {
+}
+
+.reg-heading {
     text-align: center;
-  }
-  
+}
+
 
 /* Terms Stylings */
 
-.w50{
+.w50 {
     max-width: 50vw;
+
 }
-.wm50{
-    min-width :50vw;
+
+.wm50 {
+    min-width: 50vw;
 }
+
+.flex-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agreeBtn {
+    width: 20em;
+    height: 1.5em;
+    padding: 10px;
+    background-color: #ff914c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 1em;
+}
+
+#termsAgreement {
+    width: 1.6em !important
+}
+
 /* General Container Styling */
 .terms-container {
     max-width: 900px;
@@ -63,54 +88,53 @@ form {
     font-family: 'Roboto', sans-serif;
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
     border-radius: 10px;
-  }
-  
-  h1 {
+}
+
+h1 {
     text-align: center;
     /* color: #a1ffb0; */
     font-size: 2.5rem;
     margin-bottom: 40px;
     letter-spacing: 2px;
-  }
-  
-  h2 {
+}
+
+h2 {
     /* color: #54e346; */
     font-size: 1.8rem;
     margin-top: 20px;
-  }
-  
-  p {
+}
+
+p {
     font-size: 1.1rem;
     line-height: 1.8;
     /* color: #e0e0e0; */
     margin-bottom: 10px;
-  }
-  
-  .terms-section {
+}
+
+.terms-section {
     margin-bottom: 25px;
     padding-bottom: 10px;
     border-bottom: 1px solid #444;
-  }
-  
-  /* Disclaimer Styling */
-  .disclaimer {
+}
+
+/* Disclaimer Styling */
+.disclaimer {
     background-color: #303030;
     padding: 15px;
     border-radius: 8px;
     text-align: center;
     margin-top: 20px;
-  }
-  
-  .disclaimer p {
+}
+
+.disclaimer p {
     font-size: 1.2rem;
     color: #ff5050;
-  }
-  
+}
 
 
-  .flex{
+
+.flex {
     display: flex;
-    flex-direction: row
-    ;
+    flex-direction: row;
     justify-content: space-around;
-  }
+}
