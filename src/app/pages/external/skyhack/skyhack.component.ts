@@ -11,8 +11,8 @@ import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } fr
 })
 export class SkyhackComponent {
   registrationForm: FormGroup;
-showForm:boolean = true;
-showTerms:boolean = false;
+showForm:boolean = false;
+showTerms:boolean = true;
   constructor(private fb: FormBuilder) {
     this.registrationForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],
