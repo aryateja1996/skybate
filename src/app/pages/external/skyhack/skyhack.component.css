@@ -85,7 +85,6 @@ button:disabled {
     padding: 20px;
     /* background-color: #1b1b1b; */
     color: #040404;
-    font-family: 'Roboto', sans-serif;
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
     border-radius: 10px;
 }
