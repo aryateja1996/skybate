@@ -41,8 +41,8 @@ export class SucessPageComponent {
 
   goToHome(): void {
     if (this.paymentData) {
-      
-    window.open("https://chat.whatsapp.com/GaPPKyHqytAAQXcpLuF7vt", '_blank');
+      this.router.navigate(['/home']);
+    // window.open("https://chat.whatsapp.com/GaPPKyHqytAAQXcpLuF7vt", '_blank');
     }
   }
 }
