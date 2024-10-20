@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
- baseUrl:string = "http://localhost:3010/";
-//  baseUrl:string="https://api.skybate.in/";
+//  baseUrl:string = "http://localhost:3010/";
+ baseUrl:string="https://api.skybate.in/";
   constructor(private http:HttpClient) { }
 
 
