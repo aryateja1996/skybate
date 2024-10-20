@@ -14,7 +14,7 @@ export class SkyhackComponent {
   registrationForm: FormGroup;
   showForm: boolean = false;
   showTerms: boolean = true;
-  constructor(private fb: FormBuilder,private api:ApiService) {
+  constructor(private fb: FormBuilder, private api: ApiService) {
     this.registrationForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -41,23 +41,23 @@ export class SkyhackComponent {
   onSubmit() {
     if (this.registrationForm.valid) {
       console.log(this.registrationForm.value);
-this.api.saveDetails(this.registrationForm.value,'skyhack').subscribe((res)=>{
-  console.log(res);
-  const responce = res as any
-  if (responce['status'] === 200) {
-    this.api.payment({
-      "userId":"HELLO123",
-  "amount":500,
-  "phone":this.registrationForm.value['mobile']
-    },'skyhack').subscribe((rest)=>{
-      const responce = rest as any
-      window.location.href = responce['redirectUrl']
-    })
-  } else {
-    console.log("something went wrong");
-    
-  }
-})
+      this.api.saveDetails(this.registrationForm.value, 'skyhack').subscribe((res) => {
+        console.log(res);
+        const responce = res as any
+        if (responce['status'] === 200) {
+          this.api.payment({
+            "userId": "HELLO123",
+            "amount": 500,
+            "phone": this.registrationForm.value['mobile']
+          }, 'skyhack').subscribe((rest) => {
+            const responce = rest as any
+            window.location.href = responce['redirectUrl']
+          })
+        } else {
+          console.log("something went wrong");
+
+        }
+      })
     } else {
       console.log('Form is invalid');
     }
