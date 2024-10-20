@@ -30,7 +30,7 @@ export class SkyhackComponent {
       teamMembers: this.fb.array([]), // Add dynamic controls for team members
       areaOfInterest: ['', Validators.required],
       skills: [''],
-      projectIdea: ['', Validators.required],
+      projectIdea: [''],
       emergencyContact: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       termsAgreement: [{ value: false, disabled: true }, Validators.requiredTrue,],
     });
