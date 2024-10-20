@@ -19,5 +19,8 @@ export class ApiService {
   payment(body:any,fort:string){
     return this.http.post(this.baseUrl+'pay/'+fort,body,{});
   } 
+  getPaymentDetails(endPoint: string){
+    return this.http.get(this.baseUrl +'paymentverifyafter/'+endPoint ,)
+  }
 
 }
