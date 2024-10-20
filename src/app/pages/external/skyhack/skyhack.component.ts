@@ -47,7 +47,7 @@ export class SkyhackComponent {
         if (responce['status'] === 200) {
           this.api.payment({
             "userId": "HELLO123",
-            "amount": 500,
+            "amount": 1,
             "phone": this.registrationForm.value['mobile']
           }, 'skyhack').subscribe((rest) => {
             const responce = rest as any
