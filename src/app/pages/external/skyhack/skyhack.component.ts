@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../../../services/api.service';
+import { LocationService } from '../../../services/location.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-skyhack',
   standalone: true,
@@ -12,9 +14,9 @@ import { ApiService } from '../../../services/api.service';
 })
 export class SkyhackComponent {
   registrationForm: FormGroup;
-  showForm: boolean = false;
-  showTerms: boolean = true;
-  constructor(private fb: FormBuilder, private api: ApiService) {
+  showForm: boolean = true;
+  showTerms: boolean = false;
+  constructor(private fb: FormBuilder, private api: ApiService, private location: LocationService, private router:Router) {
     this.registrationForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -39,7 +41,10 @@ export class SkyhackComponent {
     return this.registrationForm.get('teamMembers') as FormArray;
   }
   onSubmit() {
-    if (this.registrationForm.valid) {
+this.location.getUserLocation().then((cc)=>{
+  console.log(cc);
+  if (cc === "IN") {
+     if (this.registrationForm.valid) {
       console.log(this.registrationForm.value);
       this.api.saveDetails(this.registrationForm.value, 'skyhack').subscribe((res) => {
         console.log(res);
@@ -61,6 +66,41 @@ export class SkyhackComponent {
     } else {
       console.log('Form is invalid');
     }
+  }else{
+   if (!this.registrationForm.valid) {
+    this.api.saveDetails(this.registrationForm.value, 'skyhack').subscribe((res) => {
+      console.log(res);
+      const responce = res as any
+     this.router.navigate(['/skyhack/nonindian'])
+    })
+   }
+    
+  }
+});
+ 
+    
+    // if (this.registrationForm.valid) {
+    //   console.log(this.registrationForm.value);
+    //   this.api.saveDetails(this.registrationForm.value, 'skyhack').subscribe((res) => {
+    //     console.log(res);
+    //     const responce = res as any
+    //     if (responce['status'] === 200) {
+    //       this.api.payment({
+    //         "userId": "HELLO123",
+    //         "amount": 500,
+    //         "phone": this.registrationForm.value['mobile']
+    //       }, 'skyhack').subscribe((rest) => {
+    //         const responce = rest as any
+    //         window.location.href = responce['redirectUrl']
+    //       })
+    //     } else {
+    //       console.log("something went wrong");
+
+    //     }
+    //   })
+    // } else {
+    //   console.log('Form is invalid');
+    // }
   }
   agreeToTermsHandle() {
     this.showForm = true;

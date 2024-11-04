@@ -11,6 +11,7 @@ import { SucessPageComponent } from './pages/payment/sucess-page/sucess-page.com
 import { FailPageComponent } from './pages/payment/fail-page/fail-page.component';
 import { ApplyWebinarComponent } from './pages/external/apply-webinar/apply-webinar.component';
 import { SkyhackComponent } from './pages/external/skyhack/skyhack.component';
+import { RedirectPageComponent } from './pages/payment/redirect-page/redirect-page.component';
 
 
 export const routes: Routes = [
@@ -26,5 +27,6 @@ export const routes: Routes = [
     {path:'sucess-payment',component:SucessPageComponent},
     {path:'fail-payment',component:FailPageComponent},
     {path:'apply-webinar',component:ApplyWebinarComponent},
-    {path:'skyhack',component:SkyhackComponent}
+    {path:'skyhack',component:SkyhackComponent},
+    {path:'skyhack/nonindian',component:RedirectPageComponent}
 ];
