@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConstantsService } from '../../../utils/constants.service';
 
 @Component({
   selector: 'app-redirect-page',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './redirect-page.component.css'
 })
 export class RedirectPageComponent {
-
+  consts:ConstantsService=new ConstantsService
 }
