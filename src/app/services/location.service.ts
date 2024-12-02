@@ -41,7 +41,10 @@ export class LocationService {
       this.http.get(url).subscribe(
         (response: any) => {
           if (response && response.results && response.results.length > 0) {
+
             const components = response.results[0].components;
+            console.log(components);
+            localStorage.setItem('country',components.country);
             const countryCode = components.country_code.toUpperCase(); // e.g., "IN"
             resolve(countryCode);
           } else {

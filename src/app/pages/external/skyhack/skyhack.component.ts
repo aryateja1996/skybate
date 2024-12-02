@@ -5,18 +5,23 @@ import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } fr
 import { ApiService } from '../../../services/api.service';
 import { LocationService } from '../../../services/location.service';
 import { Router } from '@angular/router';
+import { WindowRefService } from '../../../services/window-ref.service';
+
+
 @Component({
   selector: 'app-skyhack',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './skyhack.component.html',
-  styleUrl: './skyhack.component.css'
+  styleUrl: './skyhack.component.css',
+  providers:[WindowRefService]
 })
+
 export class SkyhackComponent {
   registrationForm: FormGroup;
   showForm: boolean = true;
   showTerms: boolean = false;
-  constructor(private fb: FormBuilder, private api: ApiService, private location: LocationService, private router:Router) {
+  constructor(private fb: FormBuilder, private api: ApiService, private location: LocationService, private router:Router,private winRef: WindowRefService) {
     this.registrationForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -67,12 +72,52 @@ this.location.getUserLocation().then((cc)=>{
       console.log('Form is invalid');
     }
   }else{
+    var c = localStorage.getItem('country')
+    console.log(c);
+    
    if (!this.registrationForm.valid) {
-    this.api.saveDetails(this.registrationForm.value, 'skyhack').subscribe((res) => {
-      console.log(res);
-      const responce = res as any
-     this.router.navigate(['/skyhack/nonindian'])
-    })
+    const options: any = {
+      key: 'rzp_test_YNprGJKtSuhoW9',
+      amount: 125500, // amount should be in paise format to display Rs 1255 without decimal point
+      currency: 'INR',
+      name: 'Sky Hack', // company name or product name
+      description: '',  // product description
+      image: './public/logo.png', // company logo or product image
+      order_id: 'order_PHhhVyEtNwk3NW', // order_id created by you in backend
+      modal: {
+        // We should prevent closing of the form when esc key is pressed.
+        escape: false,
+      },
+      notes: {
+        // include notes if any
+      },
+      theme: {
+        // colors:[
+          
+        //   "#3c87c5",
+        //   "#ff914c",
+        // ],
+        color: '#ff914c'
+      }
+    };
+    options.handler = ((response:any, error:any) => {
+      options.response = response;
+      console.log(response);
+      console.log(options);
+      // call your backend api to verify payment signature & capture transaction
+    });
+    options.modal.ondismiss = (() => {
+      // handle the case when user closes the form while transaction is in progress
+      console.log('Transaction cancelled.');
+    });
+    const rzp = new this.winRef.nativeWindow.Razorpay(options);
+    rzp.open();
+  
+    // this.api.saveDetails(this.registrationForm.value, 'skyhack').subscribe((res) => {
+    //   console.log(res);
+    //   const responce = res as any
+   
+    // })
    }
     
   }

@@ -1,0 +1,148 @@
+
+
+.s1 {
+    color: #A20C0C;
+    font-family: Calibri, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 33.5pt;
+}
+.main-content{
+    outline: 1px solid red;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.makeCenter{
+    display: flex;
+    justify-content: center;
+}
+.s2 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 13pt;
+}
+
+.s3 {
+    color: #FFF;
+    font-family: "Arial Black", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+.s4 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11.5pt;
+}
+
+.s5 {
+    color: #383636;
+    font-family: "Arial Black", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+.s6 {
+    color: #383636;
+    font-family: "Arial Black", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 9pt;
+}
+
+.s7 {
+    color: #383636;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 9pt;
+}
+
+.s8 {
+    color: #FFF;
+    font-family: "Arial Black", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 13pt;
+}
+
+.s9 {
+    color: black;
+    font-family: "Arial Black", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 13.5pt;
+}
+
+p {
+    color: #A20C0C;
+    font-family: "Book Antiqua", serif;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 20pt;
+    margin: 0pt;
+}
+
+table,
+tbody {
+    vertical-align: top;
+    overflow: visible;
+}
+
+/* Here Starts the Form CSS*/
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #990000;
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #ccc;
+  }
+  

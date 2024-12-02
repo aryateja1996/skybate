@@ -12,6 +12,7 @@ import { FailPageComponent } from './pages/payment/fail-page/fail-page.component
 import { ApplyWebinarComponent } from './pages/external/apply-webinar/apply-webinar.component';
 import { SkyhackComponent } from './pages/external/skyhack/skyhack.component';
 import { RedirectPageComponent } from './pages/payment/redirect-page/redirect-page.component';
+import { MomInvoiceComponent } from './pages/external/mom-invoice/mom-invoice.component';
 
 
 export const routes: Routes = [
@@ -28,5 +29,6 @@ export const routes: Routes = [
     {path:'fail-payment',component:FailPageComponent},
     {path:'apply-webinar',component:ApplyWebinarComponent},
     {path:'skyhack',component:SkyhackComponent},
-    {path:'skyhack/nonindian',component:RedirectPageComponent}
+    {path:'skyhack/nonindian',component:RedirectPageComponent},
+    {path:'gof/invoice',component:MomInvoiceComponent}
 ];

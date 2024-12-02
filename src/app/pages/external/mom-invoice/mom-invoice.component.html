@@ -1,0 +1,137 @@
+<div class="container">
+    <h2>Geetha Organic Farms</h2>
+    <div>
+        <label for="date">Select Date:</label>
+        <input id="date" type="date" [(ngModel)]="selectedDate" />
+      </div>
+      
+    <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+       
+      <div formArrayName="items">
+        @for( item of items.controls; track item; let i = $index){
+            <div  [formGroupName]="i" class="item-row">
+                <div>
+                  <input formControlName="menu" placeholder="Menu Item" />
+                </div>
+                <div>
+                  <input formControlName="price" type="number" placeholder="Price" (input)="calculateTotal(i)" />
+                </div>
+                <div>
+                  <input formControlName="qty" type="number" placeholder="Quantity" (input)="calculateTotal(i)" />
+                </div>
+                <div>
+                  <input formControlName="total" [readonly]="true" placeholder="Total" />
+                </div>
+                <button type="button" (click)="removeItem(i)">Remove</button>
+              </div>
+        }
+       
+      </div>
+  
+      <button type="button" (click)="addItem()">+ Add Item</button>
+      <div>
+        <p>Total: {{ getTotal() }}</p>
+      </div>
+      <button type="submit" [disabled]="!invoiceForm.valid">Submit</button>
+    </form>
+  </div>
+  
+  
+
+
+
+@if(hidden){
+<div id='pdf' style="width: 210mm;height: 297mm;">
+    <div class="main-content"style="  width:100%;">
+        <p class="s1" style="text-indent: 0pt;text-align: center;"><span
+                class="logo" style="justify-content: center;"><img style="width:3em ;height:3em" alt="image"
+                    src="gof.png" /></span>Geetha Organic farms
+        </p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <!-- <p class="s2" style="text-indent: 0pt;text-align: right;">Date: {{todayFormatted}}</p> -->
+        <p class="s2" style="text-indent: 0pt;text-align: right;">Date:{{formatDate(selectedDate!)}}</p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <table style="border-collapse:collapse;" cellspacing="0">
+            <tr style="height:33pt">
+                <td style="width:51pt" bgcolor="#A20C0C">
+                    <p class="s3" style="padding-top: 6pt;padding-left: 1pt;text-indent: 0pt;text-align: center;">ITEM
+                    </p>
+                </td>
+                <td style="width:172pt" bgcolor="#A20C0C">
+                    <p class="s3" style="padding-top: 6pt;text-indent: 0pt;text-align: center;">MENU</p>
+                </td>
+                <td style="width:96pt" bgcolor="#A20C0C">
+                    <p class="s3" style="padding-top: 6pt;padding-right: 21pt;text-indent: 0pt;text-align: right;">PRICE
+                    </p>
+                </td>
+                <td style="width:53pt" bgcolor="#A20C0C">
+                    <p class="s3"
+                        style="padding-top: 6pt;padding-left: 1pt;padding-right: 1pt;text-indent: 0pt;text-align: center;">
+                        QTY</p>
+                </td>
+                <td style="width:104pt" bgcolor="#A20C0C">
+                    <p class="s3" style="padding-top: 6pt;padding-right: 22pt;text-indent: 0pt;text-align: right;">TOTAL
+                    </p>
+                </td>
+            </tr>
+           @for (item of invoiceForm.value.items; track item; let i = $index) {
+            <tr style="height:33pt">
+                <td style="width:51pt" bgcolor="#F4F2F2">
+                    <p class="s4"
+                        style="text-indent: 0pt;text-align: center;">
+                       {{i+1}}
+                    </p>
+                </td>
+                <td style="width:172pt" bgcolor="#F4F2F2">
+                    <p class="s4" style="text-indent: 0pt;text-align: left;">{{item.menu}}
+                    </p>
+                </td>
+                <td style="width:96pt" bgcolor="#F4F2F2">
+                    <p class="s4" style="text-indent: 0pt;text-align: right;">{{item.price}}
+                    </p>
+                </td>
+                <td style="width:53pt" bgcolor="#F4F2F2">
+                    <p class="s4" style="text-indent: 0pt;text-align: center;">{{item.qty}}</p>
+                </td>
+                <td style="width:104pt" bgcolor="#F4F2F2">
+                    <p class="s4" style="text-indent: 0pt;text-align: right;">
+                        {{item.price * item.qty}}/-
+                    </p>
+                </td>
+            </tr>
+           }
+        </table>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <div class="makeCenter">
+            <div class="textbox" style="background:#F4F2F2;display:block;min-height:69.3pt;width:221.6pt;">
+                <p class="s5" style="text-indent: 0pt;text-align: center;">PAYMENT
+                    INFORMATION:</p>
+                <p class="s6" style="text-indent: 0pt;text-align: center;">Bank Name <span
+                        class="s7">Geetha
+                        Vemulapalli</span></p>
+                <p class="s6" style="text-indent: 0pt;text-align: center;">Gpay or PhonePe
+                    <span class="s7">6281553797</span>
+                </p>
+            </div>
+            <div class="textbox"
+                style="background:#A20C0C;display:flex;min-height:32.4pt;width:147.8pt;align-items: center;">
+                <p class="s8" style="padding-top: 6pt;padding-left: 31pt;text-indent: 0pt;text-align: left;">T O T A L
+                </p>
+            </div>
+            <div class="textbox" style="background:#F4F2F2;display:block;min-height:32.4pt;width:103.5pt;">
+                <p class="s9"
+                    style="padding-top: 6pt;padding-left: 29pt;text-indent: 0pt;text-align: left; display: flex; align-items: center;">
+                    {{ getTotal() }}/-</p>
+            </div>
+        </div>
+        <p style="padding-left: 7pt;text-indent: 0pt;text-align: left;"><span
+                style=" color: black; font-family: Times New Roman, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt;">
+            </span><span
+                style=" color: black; font-family:Times New Roman, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; vertical-align: 2pt;">
+            </span></p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p style="padding-left: 20pt;text-indent: 0pt;text-align: center;">Thanks For Your Purchase!</p>
+
+    </div>
+
+</div>}
