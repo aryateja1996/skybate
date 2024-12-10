@@ -14,13 +14,21 @@ import { LoaderService } from '../../../components/loading/loader.service';
   styleUrl: './mom-invoice.component.css'
 })
 export class MomInvoiceComponent {
+  invoice_id:string="0";
   selectedDate: string | null = null;
   invoiceForm: FormGroup;
+  billDetails: FormGroup;
   hidden:boolean=false;
 todayFormatted:any;
   constructor(private fb: FormBuilder,private datePipe: DatePipe,private loaderService: LoaderService) {
     const today = new Date();
     this.todayFormatted = this.datePipe.transform(today, 'dd/MM/yy') || '';
+    this.billDetails = this.fb.group({
+      id: ['',Validators.required],
+      name:['',Validators.required],
+      phone: [''],
+      address: ['']
+    })
     this.invoiceForm = this.fb.group({
       items: this.fb.array([this.createItem()])
     });
@@ -76,6 +84,12 @@ todayFormatted:any;
   onSubmit() {
     this.hidden = true;
     console.log(this.invoiceForm.value);
+    console.log(this.invoiceForm.valid);
+    
+    console.log(this.billDetails);
+    console.log(this.billDetails.valid);
+    
+    
     this.loaderService.show();
     if (this.hidden) {
       
