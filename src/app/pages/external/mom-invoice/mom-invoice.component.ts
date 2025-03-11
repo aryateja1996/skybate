@@ -50,9 +50,9 @@ todayFormatted:any;
   createItem(): FormGroup {
     return this.fb.group({
       menu: ['', Validators.required],
-      price: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      qty: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      total: [{ value: 0, disabled: true }]
+      price: ['', [Validators.required, Validators.pattern('^[0-9]*\\.?[0-9]+$')]],
+      qty: ['', [Validators.required,Validators.pattern('^[0-9]*\\.?[0-9]+$')]],
+      total: [{ value: 0.00, disabled: true }]
     });
   }
 
@@ -70,7 +70,7 @@ todayFormatted:any;
     const item = this.items.at(index);
     const price = item?.get('price')?.value || 0;
     const qty = item?.get('qty')?.value || 0;
-    const total = price * qty;
+    const total = (price * qty).toFixed(2);
     item?.get('total')?.setValue(total);
   }
 
